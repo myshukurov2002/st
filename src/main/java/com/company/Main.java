@@ -28,8 +28,8 @@ public class Main {
         telegramBotsApi5.registerBot(new Progress());
         System.out.println("running 5 ...");
 
-        TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-        System.out.println(" Namoz running ...");
-        botsApi.registerBot(new MyBot("7560789894:AAHWyVouM4DdreUypaMVIqnr8ZooLKBtw_4"));
+//        TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
+//        System.out.println(" Namoz running ...");
+//        botsApi.registerBot(new MyBot("7560789894:AAHWyVouM4DdreUypaMVIqnr8ZooLKBtw_4"));
     }
 }
