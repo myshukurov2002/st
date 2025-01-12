@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.robiya.MyBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
@@ -26,5 +27,9 @@ public class Main {
         TelegramBotsApi telegramBotsApi5 = new TelegramBotsApi(DefaultBotSession.class);
         telegramBotsApi5.registerBot(new Progress());
         System.out.println("running 5 ...");
+
+        TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
+        System.out.println(" Namoz running ...");
+        botsApi.registerBot(new MyBot("7560789894:AAHWyVouM4DdreUypaMVIqnr8ZooLKBtw_4"));
     }
 }
