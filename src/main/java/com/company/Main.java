@@ -1,6 +1,6 @@
 package com.company;
 
-import com.company.robiya.MyBot;
+import com.company.umid.MyBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
@@ -39,5 +39,10 @@ public class Main {
         TelegramBotsApi botsApi5 = new TelegramBotsApi(DefaultBotSession.class);
         System.out.println(" Saidazim running ...");
         botsApi5.registerBot(new StudyBot("7347972642:AAFxIhbjQWVItgVSnE5JL2Q02hFBldTRxx4"));
+
+
+        TelegramBotsApi unmid = new TelegramBotsApi(DefaultBotSession.class);
+        System.out.println(" Umid running ...");
+        unmid.registerBot(new MyBot());
     }
 }
