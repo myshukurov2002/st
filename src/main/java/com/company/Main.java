@@ -35,5 +35,9 @@ public class Main {
         TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
         System.out.println(" Ilyos running ...");
         botsApi.registerBot(new PersonalDevelopment());
+
+        TelegramBotsApi botsApi5 = new TelegramBotsApi(DefaultBotSession.class);
+        System.out.println(" Saidazim running ...");
+        botsApi5.registerBot(new StudyBot("7347972642:AAFxIhbjQWVItgVSnE5JL2Q02hFBldTRxx4"));
     }
 }
