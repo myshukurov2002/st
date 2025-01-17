@@ -44,5 +44,9 @@ public class Main {
         TelegramBotsApi unmid = new TelegramBotsApi(DefaultBotSession.class);
         System.out.println(" Umid running ...");
         unmid.registerBot(new MyBot());
+
+        TelegramBotsApi abdulloh = new TelegramBotsApi(DefaultBotSession.class);
+        System.out.println(" Abdulloh running ...");
+        abdulloh.registerBot(new MaxWay());
     }
 }

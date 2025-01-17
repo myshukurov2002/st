@@ -9,8 +9,8 @@ public class Main2 {
     public static void main(String[] args) throws TelegramApiException {
 
 
-        TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-        System.out.println(" Umid running ...");
-        botsApi.registerBot(new MyBot());
+//        TelegramBotsApi abdulloh = new TelegramBotsApi(DefaultBotSession.class);
+//        System.out.println(" Abdulloh running ...");
+//        abdulloh.registerBot(new MaxWay());
     }
 }
