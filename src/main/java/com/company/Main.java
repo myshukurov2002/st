@@ -56,9 +56,9 @@ public class Main {
         telegramBotsApi.registerBot(new Mehmon());
         System.out.println("Azizbek successfully running ");
 
-        TelegramBotsApi mansur = new TelegramBotsApi(DefaultBotSession.class);
-        mansur.registerBot(new Mansur());
-        System.out.println("Mansur successfully running ");
+//        TelegramBotsApi mansur = new TelegramBotsApi(DefaultBotSession.class);
+//        mansur.registerBot(new Mansur());
+//        System.out.println("Mansur successfully running ");
 
 
         TelegramBotsApi byShop = new TelegramBotsApi(DefaultBotSession.class);
