@@ -1,4 +1,4 @@
-package com.company;
+package com.company.old;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.ForwardMessage;

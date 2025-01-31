@@ -1,4 +1,4 @@
-package com.company;
+package com.company.old;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -18,10 +18,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Translator extends TelegramLongPollingBot {
-    public Translator(String botToken) {
-        super(botToken);
-    }
+public class Motivation extends TelegramLongPollingBot {
 
     @Override
     @SneakyThrows
@@ -34,13 +31,8 @@ public class Translator extends TelegramLongPollingBot {
             String text = message.getText();
             long chatId = message.getChatId();
 
-            if (text.equals("/start")) {
-                sendMessage(chatId, "Istalgan tildagi matnni yuboring. Men esa sizga uning tarjimasini jo'natib beraman!");
-
-            } else {
                 String response = getAIResponse(text);
                 sendMessage(chatId, response);
-            }
         }
     }
 
@@ -58,7 +50,7 @@ public class Translator extends TelegramLongPollingBot {
 
     private String getAIResponse(String userInput) {
         String text = """
-                Send any text, and I will translate it directly into Uzbek. I will only reply with the translated text, without adding any comments or explanations
+                Foydalanuvchi nimadir yozganda, ularga qisqa va ilhomlantiruvchi motivatsion gaplarni yubor. Gaplar o‘zbek tilida bo‘lishi kerak va foydalanuvchiga kuch-quvvat beradigan, ijobiy ruhlantiruvchi bo‘lsin. Har safar yangi, original va samarali motivatsiya beradigan gaplarni yoz. Izohlar yoki ortiqcha so‘zlar qo‘shmaslik kerak.
                 """ + "User input: " + userInput;
 
 
@@ -105,5 +97,10 @@ public class Translator extends TelegramLongPollingBot {
     @Override
     public String getBotUsername() {
         return "https://t.me/translator9abot";
+    }
+
+    @Override
+    public String getBotToken() {
+        return "7906194928:AAHUcy4hV7JpQe6ig_FLHHeDc13ZXNJXupQ";
     }
 }

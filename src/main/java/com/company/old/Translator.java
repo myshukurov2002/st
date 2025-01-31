@@ -1,4 +1,4 @@
-package com.company;
+package com.company.old;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -18,7 +18,10 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Progress extends TelegramLongPollingBot {
+public class Translator extends TelegramLongPollingBot {
+    public Translator(String botToken) {
+        super(botToken);
+    }
 
     @Override
     @SneakyThrows
@@ -31,8 +34,13 @@ public class Progress extends TelegramLongPollingBot {
             String text = message.getText();
             long chatId = message.getChatId();
 
-            String response = getAIResponse(text);
-            sendMessage(chatId, response);
+            if (text.equals("/start")) {
+                sendMessage(chatId, "Istalgan tildagi matnni yuboring. Men esa sizga uning tarjimasini jo'natib beraman!");
+
+            } else {
+                String response = getAIResponse(text);
+                sendMessage(chatId, response);
+            }
         }
     }
 
@@ -50,7 +58,8 @@ public class Progress extends TelegramLongPollingBot {
 
     private String getAIResponse(String userInput) {
         String text = """
-Foydalanuvchi rivojlanish haqida so'rov yuborsa, faqat qisqa va samarali maslahat bering. Javobni uzun qilmasdan aniq bering                 """ + "User input: " + userInput;
+                Send any text, and I will translate it directly into Uzbek. I will only reply with the translated text, without adding any comments or explanations
+                """ + "User input: " + userInput;
 
 
         try {
@@ -96,10 +105,5 @@ Foydalanuvchi rivojlanish haqida so'rov yuborsa, faqat qisqa va samarali maslaha
     @Override
     public String getBotUsername() {
         return "https://t.me/translator9abot";
-    }
-
-    @Override
-    public String getBotToken() {
-        return "7867673034:AAHzLb0Nmv3_EkMbRYLCqJObnOY3HINVvd8";
     }
 }

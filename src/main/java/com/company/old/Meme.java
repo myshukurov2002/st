@@ -1,4 +1,4 @@
-package com.company;
+package com.company.old;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -18,7 +18,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Motivation extends TelegramLongPollingBot {
+public class Meme extends TelegramLongPollingBot {
 
     @Override
     @SneakyThrows
@@ -31,8 +31,13 @@ public class Motivation extends TelegramLongPollingBot {
             String text = message.getText();
             long chatId = message.getChatId();
 
+            if (text.equals("/start")) {
+                sendMessage(chatId, "/hazil ni bosing!");
+
+            } else {
                 String response = getAIResponse(text);
                 sendMessage(chatId, response);
+            }
         }
     }
 
@@ -50,7 +55,7 @@ public class Motivation extends TelegramLongPollingBot {
 
     private String getAIResponse(String userInput) {
         String text = """
-                Foydalanuvchi nimadir yozganda, ularga qisqa va ilhomlantiruvchi motivatsion gaplarni yubor. Gaplar o‘zbek tilida bo‘lishi kerak va foydalanuvchiga kuch-quvvat beradigan, ijobiy ruhlantiruvchi bo‘lsin. Har safar yangi, original va samarali motivatsiya beradigan gaplarni yoz. Izohlar yoki ortiqcha so‘zlar qo‘shmaslik kerak.
+                Har safar foydalanuvchi hazil so'raganda, faqat bitta qisqa, kulgili va o‘zbekcha latifa yoz. Hazil sodda, aniq va o‘zbek madaniyatiga mos bo‘lishi kerak. Har safar yangi hazil, avvalgi hazillarni takrorlamaslik zarur. Ortiga hech qanday izoh, qo‘shimcha so‘z yoki so'rov talab qilinmasin. Faqat hazilning o'zi.
                 """ + "User input: " + userInput;
 
 
@@ -101,6 +106,6 @@ public class Motivation extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "7906194928:AAHUcy4hV7JpQe6ig_FLHHeDc13ZXNJXupQ";
+        return "7771900615:AAEGP2P1Gf1qj3WGzaX0Q8N2L8QnubQETQI";
     }
 }

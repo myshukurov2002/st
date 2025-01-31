@@ -1,4 +1,4 @@
-package com.company;
+package com.company.old;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -18,7 +18,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class Meme extends TelegramLongPollingBot {
+public class Progress extends TelegramLongPollingBot {
 
     @Override
     @SneakyThrows
@@ -31,13 +31,8 @@ public class Meme extends TelegramLongPollingBot {
             String text = message.getText();
             long chatId = message.getChatId();
 
-            if (text.equals("/start")) {
-                sendMessage(chatId, "/hazil ni bosing!");
-
-            } else {
-                String response = getAIResponse(text);
-                sendMessage(chatId, response);
-            }
+            String response = getAIResponse(text);
+            sendMessage(chatId, response);
         }
     }
 
@@ -55,8 +50,7 @@ public class Meme extends TelegramLongPollingBot {
 
     private String getAIResponse(String userInput) {
         String text = """
-                Har safar foydalanuvchi hazil so'raganda, faqat bitta qisqa, kulgili va o‘zbekcha latifa yoz. Hazil sodda, aniq va o‘zbek madaniyatiga mos bo‘lishi kerak. Har safar yangi hazil, avvalgi hazillarni takrorlamaslik zarur. Ortiga hech qanday izoh, qo‘shimcha so‘z yoki so'rov talab qilinmasin. Faqat hazilning o'zi.
-                """ + "User input: " + userInput;
+Foydalanuvchi rivojlanish haqida so'rov yuborsa, faqat qisqa va samarali maslahat bering. Javobni uzun qilmasdan aniq bering                 """ + "User input: " + userInput;
 
 
         try {
@@ -106,6 +100,6 @@ public class Meme extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        return "7771900615:AAEGP2P1Gf1qj3WGzaX0Q8N2L8QnubQETQI";
+        return "7867673034:AAHzLb0Nmv3_EkMbRYLCqJObnOY3HINVvd8";
     }
 }
