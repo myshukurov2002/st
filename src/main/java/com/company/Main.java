@@ -1,6 +1,8 @@
 package com.company;
 
-import com.company.a24.Mehmon;
+import com.company.a24.*;
+import com.company.a24.byshop.Dokon;
+import com.company.a24.safia.Safia;
 import com.company.umid.MyBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
@@ -53,5 +55,32 @@ public class Main {
         TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
         telegramBotsApi.registerBot(new Mehmon());
         System.out.println("Azizbek successfully running ");
+
+        TelegramBotsApi mansur = new TelegramBotsApi(DefaultBotSession.class);
+        mansur.registerBot(new Mansur());
+        System.out.println("Mansur successfully running ");
+
+
+        TelegramBotsApi byShop = new TelegramBotsApi(DefaultBotSession.class);
+        byShop.registerBot(new Dokon());
+        System.out.println("ByShop successfully running ");
+
+        TelegramBotsApi kia = new TelegramBotsApi(DefaultBotSession.class);
+        kia.registerBot(new Kia());
+        System.out.println("Kia successfully running ");
+
+        TelegramBotsApi garant = new TelegramBotsApi(DefaultBotSession.class);
+        garant.registerBot(new Garant());
+        System.out.println("Garant successfully running ");
+
+        TelegramBotsApi safia = new TelegramBotsApi(DefaultBotSession.class);
+        safia.registerBot(new Safia());
+        System.out.println("Safia successfully running ");
+
+        TelegramBotsApi weather = new TelegramBotsApi(DefaultBotSession.class);
+        weather.registerBot(new WeatherRecommendationBot());
+        System.out.println("WeatherRecommendationBot successfully running ");
+
+
     }
 }
